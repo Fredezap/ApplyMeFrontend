@@ -1,0 +1,41 @@
+.template {
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+    margin-bottom: 100px;
+}
+
+.form .password-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: -45px;
+    gap: 20px;
+}
+
+.show-password {
+    font-size: 25px;
+}
+
+.form .form-button button {
+    width: 70vw;
+}
+
+.form-button {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    margin-right: 20px;
+}
+
+.form-button button {
+    cursor: pointer;
+}
+
+.forgot-password-box {
+    margin: 30px;
+}

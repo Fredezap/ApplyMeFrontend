@@ -1,0 +1,8 @@
+#node modlues + build
+node_modules
+/build
+
+#enviroment
+.env
+.env.test
+.env.prod

@@ -1,0 +1,116 @@
+/* Icons */
+.error-icon {
+    color: red;
+    font-size: 22px;
+}
+
+.success-icon {
+    color: green;
+    font-size: 22px;
+}
+
+
+/* Messages */
+.manager-message {
+    text-align: left;
+    color: white;
+    margin: 0;
+}
+
+.message-manager-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    z-index: 9999;
+    max-width: 400px;
+    padding: 15px;
+    background-color: rgb(31, 41, 55); 
+    border-radius: 15px;
+    gap: 20px;
+    margin: 0 10px;
+}
+
+.form-message {
+font-weight: 500;
+margin-top: 10px;
+}
+
+.login-message {
+color: rgb(28, 203, 203);
+}
+
+.error-message {
+color: red;
+}
+
+.success-message {
+color: green;
+}
+
+
+/* Modals*/
+.modal-success {
+    color: white;
+    margin-top: 150px;
+}
+
+.modal-success .modal-content {
+    background-color: rgb(33, 37, 41);
+}
+
+.modal-succes-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.modal-succes-body .white-button-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    color: black;
+}
+
+.white-button-box button {
+    width: 30vw;
+    color: black;
+}
+
+/* Loading component */
+
+.loading-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: absolute;
+    gap: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading-icon {
+    display: inline-block;
+    font-size: 2rem;
+    color: #000;
+    animation: spin 1s linear infinite;
+    line-height: 0;
+    text-align: center;
+}
+
+.sending-emails-box .loading-box {
+    position: relative;
+    margin-top: 50px;
+}
+
+/* End of loading component */
