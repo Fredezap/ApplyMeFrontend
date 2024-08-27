@@ -3,9 +3,7 @@ import postService from '../../../services/post_services/postService.js'
 import { PATHS } from '../../../store/models/routes.js'
 import useLoadingStore from '../../../store/slices/useLoadingStore.js'
 import { useMessageStore } from '../../../store/slices/useMessageStore.js'
-import { backendErrorMessageProcessor } from '../../molecules/messageManager/backendErrorMessageProcessor.js'
 import { useUserStore } from '../../../store/slices/useUserStore.js'
-import { initialValuesUser } from '../../../store/models/user.js'
 
 export const useCheckUserPermissions = () => {
     const { setLoading } = useLoadingStore()

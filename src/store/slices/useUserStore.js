@@ -20,7 +20,11 @@ export const useUserStore = create(
             isUserEmpty: () => {
                 const state = get()
                 return Object.values(state.user).some(value => !value)
-            }
+            },
+
+            resetUserValues: () => set((state) => ({
+                user: initialValuesUser
+            }))
         }),
 
         {
