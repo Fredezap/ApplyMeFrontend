@@ -4,12 +4,21 @@ import Logo from '../atoms/others/Logo'
 import { PATHS } from '../../store/models/routes'
 import { useUserStore } from '../../store/slices/useUserStore'
 import { FaRegUserCircle } from 'react-icons/fa'
+import { useMessageStore } from '../../store/slices/useMessageStore'
+import useTaskStore from '../../store/slices/useTaskStore'
 
 const HeaderNavbar = () => {
-    const { isUserEmpty } = useUserStore()
+    const { isUserEmpty, clearUser } = useUserStore()
+    const { addMessage } = useMessageStore()
+    const { clearTask } = useTaskStore()
 
+    const logout = () => {
+        clearUser()
+        clearTask()
+        addMessage({ type: 'success', content: 'Has cerrado sesión correctamente' })
+    }
     return (
-        <div className='flex flex-row fixed top-0 left-0 h-24 bg-blue-900 w-full justify-between items-center px-10'>
+        <div className='flex flex-row fixed top-0 left-0 h-24 bg-blue-900 w-full justify-between items-center px-10 z-50'>
             <Logo to={PATHS.HOME}/>
             {isUserEmpty()
                 ? (
@@ -19,8 +28,12 @@ const HeaderNavbar = () => {
                     </div>
                 )
                 : (
-                    <div style={{ fontSize: '40px', color: 'white', cursor: 'pointer' }}>
-                        <FaRegUserCircle />
+                    <div>
+                        <div style={{ fontSize: '40px', color: 'white', cursor: 'pointer' }}>
+                            <FaRegUserCircle />
+                        </div>
+                        <button onClick={logout}>Cerrar sesión</button>
+                        <button>Mi perfil</button>
                     </div>
                 )}
 

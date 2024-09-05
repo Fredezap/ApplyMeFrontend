@@ -3,7 +3,7 @@ import MessageManager from '../../molecules/messageManager/MessageManager'
 import HeaderNavbar from '../../molecules/HeaderNavbar'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { PATHS } from '../../../store/models/routes'
-import Home from '../Home'
+import Home from '../home/Home'
 import LogInForm from '../auth/login/LoginForm'
 import RegisterForm from '../auth/register/RegisterForm'
 import OpenEmailModal from '../../molecules/modals/open-email-modal/OpenEmailModal'
@@ -12,16 +12,20 @@ import isValidPath from './isValidPath'
 import { useUserStore } from '../../../store/slices/useUserStore'
 
 export const MainApp = () => {
-    const { user, isUserEmpty } = useUserStore()
     const { checkUserPermissions } = useCheckUserPermissions()
     const navigate = useNavigate()
     const location = useLocation()
     const pathname = location.pathname
+    const { clearUser, user } = useUserStore()
 
     useEffect(() => {
+        // clearUser()
+        console.log('user: ', user)
         if (isValidPath(pathname, PATHS)) {
+            // console.log('el path es valido')
             checkUserPermissions()
         } else {
+            // console.log('el path no es valido')
             navigate(PATHS.HOME)
         }
     }, [])
