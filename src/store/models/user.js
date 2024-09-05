@@ -4,5 +4,6 @@ export const initialValuesUser = {
     surname: '',
     email: '',
     role: '',
-    token: ''
+    token: '',
+    Tasks: []
 }

@@ -52,5 +52,5 @@ const RegisterForm = () => {
         </div>
     )
 }
-// todo: agregar un link para ir a login si ya tiene cuenta
+
 export default RegisterForm
