@@ -9,6 +9,8 @@ export const useUserStore = create(
 
             setUser: (user) => set(() => ({ user })),
 
+            clearUser: () => set(() => ({ user: initialValuesUser })),
+
             updateUserEmail: (email) => set((state) => ({
                 user: { ...state.user, email }
             })),
@@ -20,7 +22,42 @@ export const useUserStore = create(
             isUserEmpty: () => {
                 const state = get()
                 return Object.values(state.user).some(value => !value)
+            },
+
+            isUserAdmin: () => {
+                const state = get()
+                return state.user.role === 'admin'
+            },
+
+            isUserEmployee: () => {
+                const state = get()
+                return state.user.role === 'employee'
+            },
+
+            isUserUser: () => {
+                const state = get()
+                return state.user.role === 'user'
+            },
+
+            getUserTasks: () => {
+                const state = get()
+                return state.user.Tasks
+            },
+
+            isUserTasksEmpty: () => {
+                const state = get()
+                // console.log(state.user.Tasks.length)
+                // state.user.Tasks = []
+                return state.user.Tasks.length === 0
             }
+
+            // updateUserTasks: (newTask) => set((state) => ({
+            //     user: {
+            //         ...state.user,
+            //         Tasks: [...state.user.Tasks, newTask]
+            //     }
+            // }))
+
         }),
 
         {

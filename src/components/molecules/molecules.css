@@ -8,6 +8,7 @@
     color: green;
     font-size: 22px;
 }
+/* End of Icons */
 
 
 /* Messages */
@@ -39,8 +40,8 @@ font-weight: 500;
 margin-top: 10px;
 }
 
-.login-message {
-color: rgb(28, 203, 203);
+.submitting-message {
+color: rgb(12, 199, 199);
 }
 
 .error-message {
@@ -50,6 +51,7 @@ color: red;
 .success-message {
 color: green;
 }
+/* End of Messages */
 
 
 /* Modals*/
@@ -83,9 +85,10 @@ color: green;
     width: 30vw;
     color: black;
 }
+/* End of Modals */
+
 
 /* Loading component */
-
 .loading-box {
     display: flex;
     flex-direction: row;
@@ -99,6 +102,10 @@ color: green;
     transform: translate(-50%, -50%);
 }
 
+.loading-box p {
+    margin: 0;
+}
+
 .loading-icon {
     display: inline-block;
     font-size: 2rem;
@@ -108,9 +115,12 @@ color: green;
     text-align: center;
 }
 
-.sending-emails-box .loading-box {
-    position: relative;
-    margin-top: 50px;
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
 /* End of loading component */
