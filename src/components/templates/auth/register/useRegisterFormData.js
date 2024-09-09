@@ -48,7 +48,7 @@ const UseRegisterFormData = () => {
         { id: 'confirmPassword', type: 'password', label: 'Confirmar contraseña', placeholder: 'Confirme su contraseña aquí...' }
     ]
 
-    return { initialValues, formFields }
+    return { initialValues, registerSchema, formFields }
 }
 
 export default UseRegisterFormData

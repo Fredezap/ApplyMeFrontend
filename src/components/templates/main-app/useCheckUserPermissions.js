@@ -15,6 +15,7 @@ export const useCheckUserPermissions = () => {
         if (isUserEmpty()) {
             console.log('el usuario esta vacio')
             clearUser()
+            navigate(PATHS.HOME)
             return
         }
 
@@ -28,6 +29,7 @@ export const useCheckUserPermissions = () => {
             clearUser()
             addMessage({ type: 'error', content: 'Please login' })
             navigate(PATHS.AUTH.LOGIN)
+            return
         }
         console.log('RESPONSE EN CHECK PERMI', response)
         setUser(response.data.user)

@@ -10,6 +10,8 @@ import OpenEmailModal from '../../molecules/modals/open-email-modal/OpenEmailMod
 import { useCheckUserPermissions } from './useCheckUserPermissions'
 import isValidPath from './isValidPath'
 import { useUserStore } from '../../../store/slices/useUserStore'
+import AdminUsers from '../home/admin/AdminUsers'
+import AdminPendingTasks from '../home/admin/AdminPendingTasks'
 
 export const MainApp = () => {
     const { checkUserPermissions } = useCheckUserPermissions()
@@ -38,6 +40,8 @@ export const MainApp = () => {
                 <Route path={PATHS.HOME} element={<Home />} />
                 <Route path={PATHS.AUTH.LOGIN} element={<LogInForm />} />
                 <Route path={PATHS.AUTH.REGISTER} element={<RegisterForm />} />
+                <Route path={PATHS.ADMIN.USERS} element={<AdminUsers />} />
+                <Route path={PATHS.ADMIN.PENDING_TASKS} element={<AdminPendingTasks />} />
             </Routes>
             <OpenEmailModal />
         </div>

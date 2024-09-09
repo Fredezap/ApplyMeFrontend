@@ -46,17 +46,13 @@ export const useUserStore = create(
 
             isUserTasksEmpty: () => {
                 const state = get()
-                // console.log(state.user.Tasks.length)
-                // state.user.Tasks = []
                 return state.user.Tasks.length === 0
-            }
+            },
 
-            // updateUserTasks: (newTask) => set((state) => ({
-            //     user: {
-            //         ...state.user,
-            //         Tasks: [...state.user.Tasks, newTask]
-            //     }
-            // }))
+            isUserTasksAppliedEmpty: () => {
+                const state = get()
+                return state.user.TaskApplieds.length === 0
+            }
 
         }),
 

@@ -74,7 +74,7 @@
     background-color: rgb(129, 184, 185);
     margin-bottom: 70px;
     border-radius: 10px;
-    padding: 30px;
+    padding: 10px 20px;
     width: 100%;
     max-width: 100%;
     overflow: hidden;  
@@ -92,32 +92,54 @@
     align-items: center;
 }
 
-.tasks-list ul {
+.task-detail {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    width: 100%;
     padding: 30px 50px;
+    justify-content: flex-start;
+    text-align: start;
+    /* min-width: 65vw; */
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.task-main-title {
+    background-color: rgba(72, 151, 255, 0.5);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.task-detail p {
+    margin: 0;
+}
+
+.tasks-list ul h4 {
+    text-align: center;
+}
+
+.tasks-list ul {
     display: flex;
     flex-direction: row;
-    gap: 50px;
-    min-width: 65vw;
-    border-radius: 10px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    width: 50%;
+    gap: 25px;  
+    /* width: 50%; */
     min-width: 100%;
-    flex-shrink: 0; 
-    background-color: lightblue;
+    /* flex-shrink: 0;  */
+    padding: 0;
 }
 
 .tasks-list .img-box {
     flex-grow: 1;
     flex-basis: 10%;
-    min-width: 10%;  
+    min-width: 10%;
 }
 
 .tasks-list .text-box {
     flex-grow: 9;
     flex-basis: 90%;
-    min-width: 90%;   
+    min-width: 90%;
 }
 
 .tasks-list .text-box .task-description {
@@ -128,4 +150,35 @@
 
 .home-title {
     margin-bottom: 50px;
+}
+
+/* Admin styles */
+
+.main-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.admin-users h1 {
+    margin-bottom: 40px;
+}
+
+.user-user {
+    background-color: rgb(183, 206, 183) !important;
+    text-align: center !important;
+}
+
+.user-employee {
+    background-color: cadetblue !important;
+}
+
+tr {
+    vertical-align: middle;
+}
+
+.task-author {
+    display: flex;
+    flex-direction: row;
+    gap: 5px
 }
