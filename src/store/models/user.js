@@ -5,5 +5,6 @@ export const initialValuesUser = {
     email: '',
     role: '',
     token: '',
-    Tasks: []
+    Tasks: [],
+    TaskApplieds: []
 }

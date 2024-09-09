@@ -29,6 +29,7 @@ const LogInForm = () => {
         }
         addMessage({ type: 'success', content: 'Has iniciado secion correctamente' })
         setUser(response.data.user)
+        console.log('USER: ', response.data.user)
         navigate(PATHS.HOME)
     }
 

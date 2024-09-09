@@ -6,16 +6,18 @@ import { useUserStore } from '../../store/slices/useUserStore'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { useMessageStore } from '../../store/slices/useMessageStore'
 import useTaskStore from '../../store/slices/useTaskStore'
+import { useNavigate } from 'react-router-dom'
 
 const HeaderNavbar = () => {
     const { isUserEmpty, clearUser } = useUserStore()
     const { addMessage } = useMessageStore()
     const { clearTask } = useTaskStore()
-
+    const navigate = useNavigate()
     const logout = () => {
         clearUser()
         clearTask()
         addMessage({ type: 'success', content: 'Has cerrado sesión correctamente' })
+        navigate(PATHS.HOME)
     }
     return (
         <div className='flex flex-row fixed top-0 left-0 h-24 bg-blue-900 w-full justify-between items-center px-10 z-50'>

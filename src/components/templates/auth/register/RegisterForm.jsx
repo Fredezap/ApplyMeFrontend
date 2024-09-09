@@ -6,11 +6,12 @@ import { RegisterFormMap } from '../register/RegisterFormMap.jsx'
 import { useState } from 'react'
 import { backendErrorMessageProcessor } from '../../../molecules/messageManager/backendErrorMessageProcessor'
 import { PATHS } from '../../../../store/models/routes.js'
-import { setOpenEmailModalInfo } from '../common/setOpenEmailModalInfo.js'
+import { useSetOpenEmailModalInfo } from '../common/setOpenEmailModalInfo.js'
 
 const RegisterForm = () => {
     const { addMessage } = useMessageStore()
     const { initialValues, registerSchema, formFields } = useRegisterFormData()
+    const { setOpenEmailModalInfo } = useSetOpenEmailModalInfo()
     const [submitingForm, setSubmitingForm] = useState(false)
 
     const modalData = {
@@ -22,6 +23,7 @@ const RegisterForm = () => {
         setSubmitingForm(true)
         const response = await postService('/auth/register', values)
         setSubmitingForm(false)
+        console.log('response de register', response)
         // todo: mandar email desde el back para confirmar cuenta y reedireccionar a login
         if (!response.success) {
             const errors = backendErrorMessageProcessor(response.errors)

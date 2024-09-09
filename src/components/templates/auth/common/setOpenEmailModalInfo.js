@@ -1,10 +1,13 @@
 import useOpenEmailModalStore from '../../../../store/slices/useOpenEmailModalStore'
 
-export const setOpenEmailModalInfo = (email, modalData) => {
+export const useSetOpenEmailModalInfo = () => {
     const { setShowOpenEmailModal, setModalData, setEmail } = useOpenEmailModalStore()
-    setEmail(email)
-    setShowOpenEmailModal(true)
-    setModalData({
-        modalData
-    })
+
+    const setOpenEmailModalInfo = (email, modalData) => {
+        setEmail(email)
+        setShowOpenEmailModal(true)
+        setModalData(modalData)
+    }
+
+    return { setOpenEmailModalInfo }
 }
