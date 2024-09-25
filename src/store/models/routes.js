@@ -9,5 +9,8 @@ export const PATHS = {
         USERS: '/users',
         PENDING_TASKS: '/pending-tasks',
         ASSIGNMENTS: '/assignments'
+    },
+    USER: {
+        PROFILE: '/profile'
     }
 }

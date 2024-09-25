@@ -12,6 +12,7 @@ import isValidPath from './isValidPath'
 import { useUserStore } from '../../../store/slices/useUserStore'
 import AdminUsers from '../home/admin/AdminUsers'
 import AdminPendingTasks from '../home/admin/AdminPendingTasks'
+import UserProfileDetails from '../profile/UserProfileDetails'
 
 export const MainApp = () => {
     const { checkUserPermissions } = useCheckUserPermissions()
@@ -24,6 +25,8 @@ export const MainApp = () => {
         // clearUser()
         console.log('user: ', user)
         if (isValidPath(pathname, PATHS)) {
+            // if path is login or register not need to check user permitions
+            if (pathname === PATHS.AUTH.LOGIN || pathname === PATHS.AUTH.REGISTER) return
             // console.log('el path es valido')
             checkUserPermissions()
         } else {
@@ -42,6 +45,7 @@ export const MainApp = () => {
                 <Route path={PATHS.AUTH.REGISTER} element={<RegisterForm />} />
                 <Route path={PATHS.ADMIN.USERS} element={<AdminUsers />} />
                 <Route path={PATHS.ADMIN.PENDING_TASKS} element={<AdminPendingTasks />} />
+                <Route path={PATHS.USER.PROFILE} element={<UserProfileDetails />} />
             </Routes>
             <OpenEmailModal />
         </div>

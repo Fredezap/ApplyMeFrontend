@@ -219,3 +219,20 @@ tr {
 .task-author {
     margin-top: 10px;
 }
+
+/* Dropdown header menu styles */
+#dropdown-basic {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 12px;
+    background-color: rgba(177, 206, 246, 0.792);
+    color: black;
+    font-size: 30px;
+    border-radius: 50px;
+}
+
+.dropdown-toggle::after{
+    font-size: 15px;
+}
+/* End of Dropdown header menu styles */
