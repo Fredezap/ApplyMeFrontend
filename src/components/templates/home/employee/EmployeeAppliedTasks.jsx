@@ -1,49 +1,68 @@
-import React from 'react'
-import { useUserStore } from '../../../../store/slices/useUserStore'
+import EmployeeTasksManager from './EmployeeTasksManager'
 
-export const EmployeeAppliedTasks = () => {
-    const { user, isUserTasksAppliedEmpty } = useUserStore()
+export const EmployeeAppliedTasks = ({
+    unapplyTask,
+    finishTask,
+    isUserTasksEmpty,
+    getUserTasksAppliedCompleted,
+    getUserTasksAppliedCanceled,
+    getUserTasksAppliedInProgres,
+    user
+}) => {
+    console.log(getUserTasksAppliedInProgres())
 
     return (
         <div>
-            {isUserTasksAppliedEmpty()
-                ? (<p>No tienes compromisos pendientes</p>)
-                : (
-                    <div className='tasks-box'>
-                        {user.TasksApplied.map((index, item) => (
-                            <div className='task-detail'>
-                                <ul key={index}>
-                                    <li className='img-box'>
-                                        {item.Images && item.Images.length > 0
-                                            ? (
-                                                item.Images.map((img, imgIndex) => (
-                                                    <div key={imgIndex}>
-                                                        <img
-                                                            src={img.url}
-                                                            alt={img.name}
-                                                            style={{ width: '100px', height: 'auto' }}
-                                                        />
-                                                    </div>
-                                                ))
-                                            )
-                                            : (
-                                                <p>No hay imagen para mostrar</p>
-                                            )}
-                                    </li>
-                                    <li className='text-box'>
-                                        <h4>{item.title}</h4>
-                                        <p className='task-description'>{item.description}</p>
-                                    </li>
-                                </ul>
-                                <div className='task-author'>
-                                    <span style={{ fontWeight: '600' }}>Autor:</span>
-                                    <span>{item.User.name}</span>
-                                    <span>{item.User.name}</span>
-                                </div>
+            <div className='compromises-main-title'>
+                <h3>Compromisos</h3>
+            </div>
+            <div className='employee-applied-tasks'>
+                {isUserTasksEmpty()
+                    ? (
+                        <div style={{ margin: '10px 0' }}>
+                            <p>Aún no has aplicado a ningún pedido</p>
+                        </div>
+                    )
+                    : (
+                        <div className='compromises-child'>
+                            <div>
+                                <h4>Pendientes</h4>
+                                {getUserTasksAppliedInProgres().length === 0
+                                    ? (<p>No tienes compromisos pendientes</p>)
+                                    : (
+                                        <EmployeeTasksManager
+                                            TaskApplieds={getUserTasksAppliedInProgres()}
+                                            status={'in-progres'}
+                                            finishTask={finishTask}
+                                            unapplyTask={unapplyTask}
+                                        />
+                                    )}
                             </div>
-                        ))}
-                    </div>
-                ) }
+                            <div>
+                                <h4>Completados</h4>
+                                {getUserTasksAppliedCompleted().length === 0
+                                    ? (<p>No tienes tareas completadas</p>)
+                                    : (
+                                        <EmployeeTasksManager
+                                            TaskApplieds={getUserTasksAppliedCompleted()}
+                                            status={'completed'}
+                                        />
+                                    )}
+                            </div>
+                            <div className='last-child'>
+                                <h4>Cancelados</h4>
+                                {getUserTasksAppliedCanceled().length === 0
+                                    ? (<p>No tienes tareas canceladas</p>)
+                                    : (
+                                        <EmployeeTasksManager
+                                            TaskApplieds={getUserTasksAppliedCanceled()}
+                                            status={'canceled'}
+                                        />
+                                    )}
+                            </div>
+                        </div>
+                    )}
+            </div>
         </div>
     )
 }

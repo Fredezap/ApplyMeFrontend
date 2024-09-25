@@ -23,7 +23,7 @@ export const useCheckUserPermissions = () => {
         const url = '/auth/check-user-permissions'
         // console.log('por entrar a chequear permisos')
         const response = await postService(url, user)
-        // console.log('permisos: ', response)
+        console.log('permisos: ', response)
         setLoading(false)
         if (!response.success) {
             clearUser()
