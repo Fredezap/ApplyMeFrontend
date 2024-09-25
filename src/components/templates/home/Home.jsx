@@ -10,7 +10,6 @@ const Home = () => {
     // todo: Ver todos los usuarios y poder hacerlos employee
     return (
         <div className='template'>
-            <h1 className='home-title'>Bienvenido a Apply Me</h1>
             {isUserAdmin()
                 ? (
                     <MainAdmin/>
@@ -64,6 +63,7 @@ const Home = () => {
                                 </div>
                             )}
                             <div className='home-form-box'>
+                                <h1 className='home-title'>Bienvenido a Apply Me</h1>
                                 {isUserUser()
                                     ? (<h4>Crear nuevo pedido</h4>)
                                     : (<h4> Crea tu primer pedido y espera a que un profesional se contacte contigo</h4>)

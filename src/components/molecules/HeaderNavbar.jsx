@@ -3,22 +3,11 @@ import WhiteButton from '../atoms/buttons/WhiteButton'
 import Logo from '../atoms/others/Logo'
 import { PATHS } from '../../store/models/routes'
 import { useUserStore } from '../../store/slices/useUserStore'
-import { FaRegUserCircle } from 'react-icons/fa'
-import { useMessageStore } from '../../store/slices/useMessageStore'
-import useTaskStore from '../../store/slices/useTaskStore'
-import { useNavigate } from 'react-router-dom'
+import { HeaderDropdownMenu } from './HeaderDropdownMenu'
 
 const HeaderNavbar = () => {
-    const { isUserEmpty, clearUser } = useUserStore()
-    const { addMessage } = useMessageStore()
-    const { clearTask } = useTaskStore()
-    const navigate = useNavigate()
-    const logout = () => {
-        clearUser()
-        clearTask()
-        addMessage({ type: 'success', content: 'Has cerrado sesión correctamente' })
-        navigate(PATHS.HOME)
-    }
+    const { isUserEmpty } = useUserStore()
+
     return (
         <div className='flex flex-row fixed top-0 left-0 h-24 bg-blue-900 w-full justify-between items-center px-10 z-50'>
             <Logo to={PATHS.HOME}/>
@@ -30,13 +19,7 @@ const HeaderNavbar = () => {
                     </div>
                 )
                 : (
-                    <div>
-                        <div style={{ fontSize: '40px', color: 'white', cursor: 'pointer' }}>
-                            <FaRegUserCircle />
-                        </div>
-                        <button onClick={logout}>Cerrar sesión</button>
-                        <button>Mi perfil</button>
-                    </div>
+                    <HeaderDropdownMenu/>
                 )}
 
         </div>
