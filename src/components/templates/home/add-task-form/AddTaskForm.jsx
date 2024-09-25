@@ -33,7 +33,7 @@ const AddTaskForm = () => {
 
         setSubmitingForm(true)
         values.user = user
-        const response = await postServiceForImg('/task/create', values)
+        const response = await postServiceForImg('/user/create-task', values)
         setSubmitingForm(false)
         if (!response.success) {
             const errors = backendErrorMessageProcessor(response.errors)

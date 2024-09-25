@@ -26,7 +26,7 @@ const AdminUsers = () => {
             return
         }
         addMessage({ type: 'success', content: 'Se ha cambiado el rol del usuario correctamente' })
-        setUsers(response.data.users)
+        setUsers(response.data.users) // todo: ver aca si no es user, en vez de users
         setChangingRole(false)
     }
 

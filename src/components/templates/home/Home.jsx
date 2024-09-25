@@ -2,6 +2,7 @@ import { useUserStore } from '../../../store/slices/useUserStore'
 import AddTaskForm from './add-task-form/AddTaskForm'
 import MainAdmin from './admin/MainAdmin'
 import { EmployeeAppliedTasks } from './employee/EmployeeAppliedTasks'
+import EmployeeMainComponent from './employee/EmployeeMainComponent'
 import EmployeePendingTasks from './employee/EmployeePendingTasks'
 
 const Home = () => {
@@ -17,8 +18,7 @@ const Home = () => {
                 : isUserEmployee()
                     ? (
                         <div>
-                            <EmployeePendingTasks/>
-                            <EmployeeAppliedTasks/>
+                            <EmployeeMainComponent/>
                         </div>
                     )
                     : (

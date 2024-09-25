@@ -52,6 +52,21 @@ export const useUserStore = create(
             isUserTasksAppliedEmpty: () => {
                 const state = get()
                 return state.user.TaskApplieds.length === 0
+            },
+
+            getUserTasksAppliedInProgres: () => {
+                const state = get()
+                return state.user.TaskApplieds.filter(task => task.status === 'in-progres')
+            },
+
+            getUserTasksAppliedCanceled: () => {
+                const state = get()
+                return state.user.TaskApplieds.filter(task => task.status === 'canceled')
+            },
+
+            getUserTasksAppliedCompleted: () => {
+                const state = get()
+                return state.user.TaskApplieds.filter(task => task.status === 'completed')
             }
 
         }),

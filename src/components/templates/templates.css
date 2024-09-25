@@ -71,13 +71,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(129, 184, 185);
-    margin-bottom: 70px;
+    /* background-color: rgb(31, 91, 92); */
+    /* margin-bottom: 70px; */
     border-radius: 10px;
     padding: 10px 20px;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;  
+    overflow: hidden;
 }
 
 .tasks-box h3 {
@@ -105,11 +105,47 @@
     margin: 10px 0;
 }
 
-.task-main-title {
-    background-color: rgba(72, 151, 255, 0.5);
-    padding: 10px;
-    margin: 10px 0;
+.task-main-title h3 {
+    color: antiquewhite;
+    margin: 0;
+}
+
+.pending-tasks{
+     background-color: rgb(18, 93, 94);
+    padding: 20px;
+    margin-bottom: 150px;
     border-radius: 5px;
+}
+
+.employee-applied-tasks{
+    background-color: rgb(255, 247, 237);
+    padding: 20px;
+}
+
+.compromises-main-title h3 {
+    background-color: rgba(255, 164, 45, 0.799);
+    margin: 0;
+    padding: 8px 0;
+    border-radius: 5px 5px 0 0;
+}
+
+.compromises-child > div {
+    border-bottom: 1px solid black;
+    margin: 50px 0;
+    padding-bottom: 50px;
+}
+
+.compromises-child .last-child {
+    border-bottom: none;
+    margin: 50px 0;
+    padding-bottom: 0px;
+}
+
+.employee-pending-task-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
 }
 
 .task-detail p {
@@ -123,23 +159,26 @@
 .tasks-list ul {
     display: flex;
     flex-direction: row;
-    gap: 25px;  
+    gap: 35px;
+    justify-content: center;
+    align-items: center;  
     /* width: 50%; */
     min-width: 100%;
     /* flex-shrink: 0;  */
-    padding: 0;
+    padding: 0 30px;
+    margin-bottom: 0;
 }
 
 .tasks-list .img-box {
-    flex-grow: 1;
-    flex-basis: 10%;
-    min-width: 10%;
+    flex-grow: 1.5;
+    flex-basis: 15%;
+    min-width: 15%;
 }
 
 .tasks-list .text-box {
-    flex-grow: 9;
-    flex-basis: 90%;
-    min-width: 90%;
+    flex-grow: 8;
+    flex-basis: 80%;
+    min-width: 80%;
 }
 
 .tasks-list .text-box .task-description {
@@ -178,7 +217,5 @@ tr {
 }
 
 .task-author {
-    display: flex;
-    flex-direction: row;
-    gap: 5px
+    margin-top: 10px;
 }
