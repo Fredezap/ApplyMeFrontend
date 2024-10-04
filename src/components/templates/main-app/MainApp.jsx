@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import MessageManager from '../../molecules/messageManager/MessageManager'
-import HeaderNavbar from '../../molecules/HeaderNavbar'
+import { HeaderNavbar } from '../../molecules/Navbar/HeaderNavbar'
 import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { PATHS } from '../../../store/models/routes'
 import Home from '../home/Home'

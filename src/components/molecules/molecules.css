@@ -173,6 +173,69 @@ color: green;
 
 /* Nabvar styles */
 .custom-navbar {
-    background-color: #195190FF;
+    background-color: #2E5266FF;
 }
+
+.main-navbar-button-paths {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    color: #DBB04AFF;
+    cursor: pointer;
+}
+
+.button-path:hover {
+    box-shadow: 1px 1px 20px rgb(86, 122, 175);
+}
+
+.button-path {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap:8px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.button-path h4 {
+    margin: 0;
+}
+
+/* Dropdown header menu styles */
+.dropdown-menu {
+    background-color: #2E5266FF;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    color: #DBB04AFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgb(143, 170, 187);
+}
+
+#dropdown-basic {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 12px;
+    background-color: rgb(143, 170, 187);
+    color: #D3D0CBFF;
+    font-size: 30px;
+    border-radius: 20px;
+    border: none;
+}
+
+.dropdown-toggle::after{
+    font-size: 15px;
+}
+/* End of Dropdown header menu styles */
+
 /* End of nabvar styles */
