@@ -1,10 +1,10 @@
 import Dropdown from 'react-bootstrap/Dropdown'
 import { FaRegUserCircle } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
-import { PATHS } from '../../store/models/routes.js'
-import { useUserStore } from '../../store/slices/useUserStore'
-import useTaskStore from '../../store/slices/useTaskStore'
-import { useMessageStore } from '../../store/slices/useMessageStore'
+import { PATHS } from '../../../store/models/routes.js'
+import { useUserStore } from '../../../store/slices/useUserStore.js'
+import useTaskStore from '../../../store/slices/useTaskStore.js'
+import { useMessageStore } from '../../../store/slices/useMessageStore.js'
 
 export const HeaderDropdownMenu = () => {
     const { clearUser } = useUserStore()
@@ -19,17 +19,13 @@ export const HeaderDropdownMenu = () => {
         navigate(PATHS.HOME)
     }
 
-    const prueba = () => {
-        navigate(PATHS.USER.PROFILE)
-        console.log('aca en prueba')
-    }
     return (
         <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
+            <Dropdown.Toggle id="dropdown-basic">
                 <FaRegUserCircle/>
             </Dropdown.Toggle>
             <Dropdown.Menu>
-                <Dropdown.Item onClick={prueba}>Mi perfil</Dropdown.Item>
+                <Dropdown.Item onClick={() => navigate(PATHS.USER.PROFILE)}>Mi perfil</Dropdown.Item>
                 <Dropdown.Item onClick={logout}>Cerrar sesión</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
