@@ -1,8 +1,24 @@
 .template {
     display: flex;
     flex-direction: column;
-    margin-top: 130px;
-    margin-bottom: 100px;
+    min-height: 78vh;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shadow-container {
+    box-shadow: 0 0 30px rgb(164, 164, 164);
+    background-color:rgb(242, 241, 239);
+}
+
+.template-center {
+    display: flex;
+    flex-direction: column;
+    min-height: 78vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
 }
 
 .form .password-input {
@@ -71,13 +87,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(31, 91, 92); */
-    /* margin-bottom: 70px; */
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 10px 50px;
     width: 100%;
     max-width: 100%;
     overflow: hidden;
+    gap: 20px;
 }
 
 .tasks-box h3 {
@@ -94,27 +109,69 @@
 
 .task-detail {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px 50px;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 1px 1px 15px #2460A7FF;
+    cursor: pointer;
+    min-height: 250px;
+}
+
+.task-detail:hover {
+    transition: 0.3s;
+    transform: scale(1.005);
+    box-shadow: 1px 1px 10px black;
+}
+
+.task-detail li {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.task-detail li > div {
+    display: flex;
+    justify-content: center;
+}
+
+.task-detail h4 {
+    color: rgb(36, 71, 113);
+}
+
+.task-detail-employee {
+    display: flex;
     flex-direction: column;
-    background-color: lightblue;
+    background-color: rgb(202, 185, 129);
     width: 100%;
     padding: 30px 50px;
     justify-content: flex-start;
     text-align: start;
-    /* min-width: 65vw; */
     border-radius: 10px;
     margin: 10px 0;
 }
 
+.task-detail-employee p {
+    color: black !important;
+}
+
 .task-main-title h3 {
     color: antiquewhite;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 .pending-tasks{
-     background-color: rgb(18, 93, 94);
-    padding: 20px;
+    padding: 50px 0;
     margin-bottom: 150px;
     border-radius: 5px;
+    width: 90%;
+    margin-top: 20px;
+    /* background-color:rgb(216, 220, 224); */
+}
+
+.pending-tasks h3 {
+    color: rgb(80, 80, 80);
 }
 
 .employee-applied-tasks{
@@ -148,12 +205,8 @@
     margin-top: 30px;
 }
 
-.task-detail p {
-    margin: 0;
-}
-
-.tasks-list ul h4 {
-    text-align: center;
+.tasks-list p {
+    color: rgb(230, 221, 206);
 }
 
 .tasks-list ul {
@@ -162,17 +215,17 @@
     gap: 35px;
     justify-content: center;
     align-items: center;  
-    /* width: 50%; */
     min-width: 100%;
-    /* flex-shrink: 0;  */
     padding: 0 30px;
     margin-bottom: 0;
 }
 
-.tasks-list .img-box {
-    flex-grow: 1.5;
-    flex-basis: 15%;
-    min-width: 15%;
+.no-img-box {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: #C7D3D4FF;
 }
 
 .tasks-list .text-box {
@@ -195,8 +248,35 @@
 
 .main-admin {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.main-admin .card {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
+    border: none;
+    transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    min-width: 14vw;
+    min-height: 30vh;
+    cursor: pointer;
+}
+
+.main-admin .card:hover {
+    transform: scale(1.1);
+    border: 1px solid #5c97ab;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-admin .card svg {
+    font-size: 50px;
 }
 
 .admin-users h1 {
@@ -204,20 +284,30 @@
 }
 
 .user-user {
-    background-color: rgb(183, 206, 183) !important;
+    background-color: rgb(181, 181, 181) !important;
     text-align: center !important;
 }
 
 .user-employee {
-    background-color: cadetblue !important;
+    background-color: rgb(181, 181, 181)  !important;
 }
 
 tr {
     vertical-align: middle;
 }
 
-.task-author {
+.task-author-detail {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.aplication-employee-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 /* Dropdown header menu styles */
@@ -236,3 +326,292 @@ tr {
     font-size: 15px;
 }
 /* End of Dropdown header menu styles */
+
+/* Admin assigned tasks */
+.admin-assigned-task-user-name{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 3px;
+    min-width: 30vw;
+    box-shadow: 1px 1px 5px #2460A7FF;
+    min-width: 60vw;
+}
+
+.admin-assigned-task-user-name:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+    background-color: aliceblue;
+}
+
+.admin-assigned-task-detail{
+    padding: 10px 30px;
+    background-color: rgb(248, 249, 251);
+    border-radius: 8px;
+}
+
+.border-completed {
+    box-shadow: 0px 0px 3px green;
+}
+
+.border-canceled {
+    box-shadow: 0px 0px 3px red;
+}
+
+.border-in-progres {
+    box-shadow: 0px 0px 3px blue;
+}
+
+.more-data {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more-data > div {
+    flex: 2;
+    margin: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 160px;
+}
+
+.more-data > div > Button,
+.more-data > div > .status {
+    width: 100%;
+    text-align: center;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    gap: 5px;
+    background-color: rgb(239, 242, 255);
+    border: none;
+}
+
+.more-data > div > Button:hover {
+    background-color: rgb(230, 234, 253);
+    box-shadow: 0px 0px 5px rgb(107, 130, 152);
+    /* border: solid 0.5px rgb(221, 225, 244);; */
+    transform: scale(1.02);
+    transition: 0.3s;
+}
+
+.admin-assigned-task-detail .date {
+    margin-top: 30px;
+}
+
+.admin-assigned-task-detail .status {
+    background-color: rgb(243, 243, 243);
+}
+
+.status-completed svg {
+    color: green;
+    font-size: 20px;
+}
+
+.status-canceled svg {
+    color: red;
+    font-size: 24px;
+}
+
+.status-in-progres svg {
+    color: blue;
+    font-size: 20px;
+}
+
+.references {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 15px;
+    margin-top: auto;
+}
+
+.references-box {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: solid;
+    padding: 8px 20px;
+    border-radius: 3px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.references-status {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+.admin-tasks-assigments .references .references-status p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.admin-tasks-assigments .references .references-title{
+    margin-bottom: 5px !important;
+    font-weight: bold;
+}
+
+.admin-tasks-assigments{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    width: 90vw;
+}
+
+.admin-tasks-assigments .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    width: 100%;
+    margin-top: 50px;
+}
+
+.total-by-status .status-completed {
+    background-image: radial-gradient(circle, #0f7711, #2C5F2D);
+    box-shadow: 2px 2px 10px #121412;
+}
+
+.total-by-status .status-canceled {
+    background-image: radial-gradient(circle, rgb(157, 24, 40), #990011FF);
+    box-shadow: 2px 2px 10px #121412;
+}
+
+.total-by-status .status-in-progres {
+    background-image: radial-gradient(circle, rgb(20, 119, 200), #0063B2FF);
+    box-shadow: 2px 2px 10px #121412;
+}
+
+.main-info {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.main-info > div {
+    border: solid 2px;
+    border-radius: 5px;
+    flex: 1;
+    padding: 15px 20px;
+    margin: 20px 50px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 260px;
+}
+
+.contact-detail {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(218, 244, 255) !important;
+    border: solid 2.5px;
+    border-radius: 5px;
+    margin: 20px;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.total-by-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.total-assignments-by-user {
+    background-color: #DBBEA1FF;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.total-assignments-by-user.details-hided {
+    height: 10px;
+}
+
+.contact-detail.details-hided {
+    height: 10px;
+}
+
+.total {
+    margin-bottom: 25px;
+}
+
+.total-assignments-by-user .total h5 {
+    margin: 0;
+}
+
+.total-assignments-by-user > div {
+    width: 100%;
+}
+
+.total-by-status p {
+    padding: 5px 12px;
+    color: rgb(231, 231, 231) !important;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.total-by-status {
+    width: 100%;
+}
+
+.admin-tables-container {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.admin-tables-container > div {
+    display: flex;
+    border-radius: 5px;
+    padding: 20px;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-direction: column;
+    gap: 20px;
+    width: 40vw;
+    overflow: auto;
+}
+
+.table thead th {
+    background-color: rgba(26, 26, 26, 0.844) !important;
+    color: white;
+}
+
+.admin-tables-container > div > table {
+    width: 100%;
+}
+
+.admin-users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* End of Admin assigned tasks */

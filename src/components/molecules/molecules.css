@@ -14,7 +14,7 @@
 /* Messages */
 .manager-message {
     text-align: left;
-    color: white;
+    color: white !important;
     margin: 0;
 }
 
@@ -25,7 +25,7 @@
     align-items: flex-start;
     position: fixed;
     top: 100px;
-    right: 0px;
+    left: 0px;
     z-index: 9999;
     max-width: 400px;
     padding: 15px;
@@ -45,7 +45,7 @@ color: rgb(12, 199, 199);
 }
 
 .error-message {
-color: red;
+color: red !important;
 }
 
 .success-message {
@@ -70,6 +70,19 @@ color: green;
     justify-content: center;
     align-content: center;
     gap: 20px;
+    color: #B3C7D6FF;
+}
+
+.modal-succes-body ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 0;
+}
+
+.modal-succes-body ul div {
+    padding: 10px 20px;
+    /* border: solid 1px white; */
 }
 
 .modal-succes-body .white-button-box {
@@ -85,6 +98,39 @@ color: green;
     width: 30vw;
     color: black;
 }
+
+/* Application detail modal component */
+.task-applied-modal{
+    color: white;
+    margin-top: 50px;
+    height: 90vh;
+}
+
+.task-applied-modal .modal-content {
+    background-color: rgb(33, 37, 41);
+}
+
+.application-detail {
+    border-radius: 3px;
+    padding: 15px 20px;
+}
+
+.application-in-progres {
+    background-color: cornflowerblue;
+}
+
+.application-completed {
+    background-color: green;
+}
+
+.application-canceled {
+    background-color: orange;
+}
+
+.task-detail-modal {
+    color: white !important;
+}
+/* End of Application detail modal component */
 /* End of Modals */
 
 
@@ -124,3 +170,9 @@ color: green;
     }
 }
 /* End of loading component */
+
+/* Nabvar styles */
+.custom-navbar {
+    background-color: #195190FF;
+}
+/* End of nabvar styles */

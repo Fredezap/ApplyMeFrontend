@@ -1,7 +1,7 @@
 import React from 'react'
-import { formatDate } from '../../../../utilities/formatDate'
+import { formatDate } from '../../../../../utilities/formatDate'
 
-const EmployeeTasksManager = ({
+export const EmployeeTasksManager = ({
     TaskApplieds,
     status,
     finishTask,
@@ -12,7 +12,7 @@ const EmployeeTasksManager = ({
             <div className='tasks-list'>
                 <div className='tasks-box'>
                     {TaskApplieds.map((taskApplied, taskAppliedIndex) => (
-                        <div className='task-detail' key={taskAppliedIndex}>
+                        <div className='task-detail-employee' key={taskAppliedIndex}>
                             <ul>
                                 <li className='img-box'>
                                     {taskApplied.Task.Images && taskApplied.Task.Images.length > 0
@@ -24,17 +24,26 @@ const EmployeeTasksManager = ({
                                                         alt={img.name}
                                                         style={{ width: '100px', height: 'auto' }}
                                                     />
-                                                    <div className='task-author'>
-                                                        <span style={{ fontWeight: '600' }}>Autor: </span>
-                                                        <span>{taskApplied.Task.User.name} </span>
-                                                        <span>{taskApplied.Task.User.surname}</span>
-                                                    </div>
+
                                                 </div>
                                             ))
                                         )
                                         : (
-                                            <p>No hay imagen para mostrar</p>
+                                            <p className='no-img-box'>No hay imagen para mostrar</p>
                                         )}
+                                    <div className='task-author-detail'>
+                                        <div>
+                                            <span style={{ fontWeight: '600' }}>Autor: </span>
+                                            {taskApplied.Task.User.name} {taskApplied.Task.User.surname}                                        </div>
+                                        <div>
+                                            <span style={{ fontWeight: '600' }}>Email: </span>
+                                            {taskApplied.Task.User.email}
+                                        </div>
+                                        <div>
+                                            <span style={{ fontWeight: '600' }}>Telefono: </span>
+                                            {taskApplied.Task.User.phone}
+                                        </div>
+                                    </div>
                                 </li>
                                 <li className='text-box'>
                                     <h4>{taskApplied.Task.title}</h4>
@@ -57,5 +66,3 @@ const EmployeeTasksManager = ({
         </div>
     )
 }
-
-export default EmployeeTasksManager

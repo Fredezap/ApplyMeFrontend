@@ -13,7 +13,6 @@ export const useCheckUserPermissions = () => {
 
     const checkUserPermissions = async() => {
         if (isUserEmpty()) {
-            console.log('el usuario esta vacio')
             clearUser()
             navigate(PATHS.HOME)
             return
@@ -21,17 +20,15 @@ export const useCheckUserPermissions = () => {
 
         setLoading(true)
         const url = '/auth/check-user-permissions'
-        // console.log('por entrar a chequear permisos')
         const response = await postService(url, user)
-        console.log('permisos: ', response)
         setLoading(false)
+
         if (!response.success) {
             clearUser()
             addMessage({ type: 'error', content: 'Please login' })
             navigate(PATHS.AUTH.LOGIN)
             return
         }
-        console.log('RESPONSE EN CHECK PERMI', response)
         setUser(response.data.user)
     }
 

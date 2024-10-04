@@ -24,7 +24,6 @@ const OpenEmailModal = () => {
 
             <Modal.Body className='modal-succes-body'>
                 {modalData?.body}
-                <p></p>
                 <div
                     className='white-button-box'
                     onClick={() => openEmailWindow(email, addMessage)}

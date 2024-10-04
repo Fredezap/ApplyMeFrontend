@@ -7,12 +7,14 @@ import { useState } from 'react'
 import { backendErrorMessageProcessor } from '../../../molecules/messageManager/backendErrorMessageProcessor'
 import { PATHS } from '../../../../store/models/routes.js'
 import { useSetOpenEmailModalInfo } from '../common/setOpenEmailModalInfo.js'
+import { useNavigate } from 'react-router-dom'
 
 const RegisterForm = () => {
     const { addMessage } = useMessageStore()
     const { initialValues, registerSchema, formFields } = useRegisterFormData()
     const { setOpenEmailModalInfo } = useSetOpenEmailModalInfo()
     const [submitingForm, setSubmitingForm] = useState(false)
+    const navigate = useNavigate()
 
     const modalData = {
         title: 'Te has registrado exitosamente!',
@@ -30,6 +32,7 @@ const RegisterForm = () => {
             addMessage({ type: 'error', content: errors })
             return
         }
+        navigate(PATHS.AUTH.LOGIN)
         setOpenEmailModalInfo(response.data.email, modalData)
         resetForm()
     }

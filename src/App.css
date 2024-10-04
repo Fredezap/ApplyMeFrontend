@@ -1,8 +1,13 @@
 #root {
-  max-width: 1280px;
   margin: auto;
-  padding: 2rem;
   text-align: center;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+p {
+  margin: 0 !important;
+  color: black !important;
 }
 
 .logo {
@@ -11,9 +16,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
