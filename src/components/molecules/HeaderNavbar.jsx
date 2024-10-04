@@ -9,7 +9,7 @@ const HeaderNavbar = () => {
     const { isUserEmpty } = useUserStore()
 
     return (
-        <div className='flex flex-row fixed top-0 left-0 h-24 bg-blue-900 w-full justify-between items-center px-10 z-50'>
+        <div className='custom-navbar flex flex-row fixed top-0 left-0 h-24 w-full justify-between items-center px-10 z-50'>
             <Logo to={PATHS.HOME}/>
             {isUserEmpty()
                 ? (

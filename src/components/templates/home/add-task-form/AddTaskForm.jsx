@@ -86,7 +86,7 @@ const AddTaskForm = () => {
                                 <Button type="submit" disabled={submitingForm}>
                                     Crear
                                 </Button>
-                                {Object.entries(errors).length > 0 && (<p className='mt-2 error-message'>Su formulario contiene errores</p>)}
+                                {Object.entries(errors).length > 0 && (<p className='mt-2 form-message error-message'>Su formulario contiene errores</p>)}
                                 {submitingForm && (<p className='mt-3 submitting-message'>Creando tarea, por favor espere...</p>)}
                             </div>
                         </Form>

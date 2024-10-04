@@ -44,6 +44,16 @@ export const useUserStore = create(
                 return state.user.Tasks
             },
 
+            getUserTasksNotApplied: () => {
+                const state = get()
+                return state.user.Tasks.filter(task => task.TaskApplieds.length === 0)
+            },
+
+            getUserTasksApplied: () => {
+                const state = get()
+                return state.user.Tasks.filter(task => task.TaskApplieds.length > 0)
+            },
+
             isUserTasksEmpty: () => {
                 const state = get()
                 return state.user.Tasks.length === 0
@@ -54,17 +64,17 @@ export const useUserStore = create(
                 return state.user.TaskApplieds.length === 0
             },
 
-            getUserTasksAppliedInProgres: () => {
+            getEmployeeTasksAppliedInProgres: () => {
                 const state = get()
                 return state.user.TaskApplieds.filter(task => task.status === 'in-progres')
             },
 
-            getUserTasksAppliedCanceled: () => {
+            getEmployeeTasksAppliedCanceled: () => {
                 const state = get()
                 return state.user.TaskApplieds.filter(task => task.status === 'canceled')
             },
 
-            getUserTasksAppliedCompleted: () => {
+            getEmployeeTasksAppliedCompleted: () => {
                 const state = get()
                 return state.user.TaskApplieds.filter(task => task.status === 'completed')
             }
