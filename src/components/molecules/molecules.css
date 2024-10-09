@@ -60,7 +60,7 @@ color: green;
     margin-top: 150px;
 }
 
-.modal-success .modal-content {
+.modal-success.modal-content {
     background-color: rgb(33, 37, 41);
 }
 
@@ -69,20 +69,22 @@ color: green;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    gap: 20px;
     color: #B3C7D6FF;
+    gap: 25px;
+    margin: 20px 5px;
 }
 
 .modal-succes-body ul {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-left: 0;
+    gap: 5px;
+    /* padding-left: 0; */
+    margin: 0;
 }
 
 .modal-succes-body ul div {
     padding: 10px 20px;
-    /* border: solid 1px white; */
+    border: solid 1px white;
 }
 
 .modal-succes-body .white-button-box {
@@ -110,21 +112,42 @@ color: green;
     background-color: rgb(33, 37, 41);
 }
 
-.application-detail {
+.application-detail-main-box {
     border-radius: 3px;
-    padding: 15px 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.application-detail-main-box:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
 }
 
 .application-in-progres {
-    background-color: cornflowerblue;
+    box-shadow: 0px 0px 10px #0063B2FF;
+    border: 0.5px solid #0063B2FF;
 }
 
 .application-completed {
-    background-color: green;
+    box-shadow: 0px 0px 10px #2C5F2D;
+    border: solid 1px #2C5F2D;
 }
 
 .application-canceled {
-    background-color: orange;
+    box-shadow: 0px 0px 10px #990011FF;
+    border: 0.5px solid #990011FF;
+}
+
+.application-canceled:hover {
+    background-color: rgba(66, 43, 46, 0.604);
+}
+
+.application-completed:hover {
+    background-color: rgba(39, 60, 40, 0.604);
+}
+
+.application-in-progres:hover {
+    background-color: rgba(40, 63, 83, 0.604);
 }
 
 .task-detail-modal {
@@ -237,5 +260,4 @@ color: green;
     font-size: 15px;
 }
 /* End of Dropdown header menu styles */
-
 /* End of nabvar styles */
