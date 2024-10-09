@@ -65,7 +65,6 @@
 
 /* Home styles */
 .home-form-box {
-    background-color: rgb(228, 215, 197);
     padding: 50px 70px;
     border-radius: 15px;
     margin-top: 50px;
@@ -105,6 +104,11 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    width: 100%;
+}
+
+.tasks-list.show {
+    margin-top: 30px;
 }
 
 .task-detail {
@@ -126,14 +130,12 @@
     box-shadow: 1px 1px 10px black;
 }
 
-.task-detail li {
-    width: 100%;
-    flex-grow: 1;
+.img-box {
+    flex: 2;
 }
 
-.task-detail li > div {
-    display: flex;
-    justify-content: center;
+.task-detail-box {
+    flex: 6;
 }
 
 .task-detail h4 {
@@ -162,16 +164,26 @@
 }
 
 .pending-tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 50px 0;
     margin-bottom: 150px;
     border-radius: 5px;
     width: 90%;
     margin-top: 20px;
-    /* background-color:rgb(216, 220, 224); */
+    background-color:rgb(216, 220, 224);
 }
 
-.pending-tasks h3 {
+.pending-tasks button {
     color: rgb(80, 80, 80);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 6px 0px;
+    width: 30%;
+    border: none;
 }
 
 .employee-applied-tasks{
@@ -205,10 +217,6 @@
     margin-top: 30px;
 }
 
-.tasks-list p {
-    color: rgb(230, 221, 206);
-}
-
 .tasks-list ul {
     display: flex;
     flex-direction: row;
@@ -228,16 +236,17 @@
     background-color: #C7D3D4FF;
 }
 
-.tasks-list .text-box {
-    flex-grow: 8;
-    flex-basis: 80%;
-    min-width: 80%;
+.text-box > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.tasks-list .text-box .task-description {
+.text-box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-align: left;
+    gap: 20px;
 }
 
 .home-title {
@@ -481,6 +490,56 @@ tr {
 .total-by-status .status-in-progres {
     background-image: radial-gradient(circle, rgb(20, 119, 200), #0063B2FF);
     box-shadow: 2px 2px 10px #121412;
+}
+
+.extra-info-main div {
+    border-radius: 3px !important;
+}
+
+.extra-info-child h5 {
+    text-align: center;
+    color:white;
+    margin: 10px 0 25px 0;
+}
+
+.extra-info-child p {
+    color: #B3C7D6FF !important;
+}
+
+.extra-info-child {
+    padding: 25px !important;
+}
+
+.applicant-contact-info button{
+    margin-top: 10px;
+}
+
+.modal-succes-body.chat-no-available p {
+    color: white !important;
+}
+
+.modal-succes-body.chat-no-available {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-succes-body.chat-no-available svg {
+    color: white;
+    font-size: 40px;
+}
+
+.comments-and-status {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.extra-info-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px !important;
 }
 
 .main-info {

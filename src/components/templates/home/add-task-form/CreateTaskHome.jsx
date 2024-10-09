@@ -4,7 +4,7 @@ import AddTaskForm from './AddTaskForm'
 export const CreateTaskHome = () => {
     const { isUserUser } = useUserStore()
     return (
-        <div className='home-form-box'>
+        <div className='home-form-box shadow-container'>
             {isUserUser()
                 ? (
                     <h4>Crear nuevo pedido</h4>
