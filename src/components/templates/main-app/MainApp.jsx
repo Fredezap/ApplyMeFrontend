@@ -13,6 +13,7 @@ import AdminUsers from '../home/admin/users/AdminUsers'
 import { AdminPendingTasks } from '../home/admin/pendings/AdminPendingTasks'
 import UserProfileDetails from '../profile/UserProfileDetails'
 import { AdminAssigments } from '../home/admin/assigments/AdminAssigments'
+import { Footer } from '../../molecules/modals/Footer/footer'
 
 export const MainApp = () => {
     const { checkUserPermissions } = useCheckUserPermissions()
@@ -33,7 +34,7 @@ export const MainApp = () => {
     }, [])
 
     return (
-        <div>
+        <div className='main-app'>
             <MessageManager />
             <HeaderNavbar />
             <Routes>
@@ -46,6 +47,7 @@ export const MainApp = () => {
                 <Route path={PATHS.USER.PROFILE} element={<UserProfileDetails />} />
             </Routes>
             <OpenEmailModal />
+            <Footer />
         </div>
     )
 }

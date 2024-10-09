@@ -1,17 +1,14 @@
-import { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
-import { TaskAppliedChatNoReadyModal } from './TaskAppliedChatNoReadyModal'
+import { SectionNoReadyYetModal } from '../section-no-ready-modal/SectionNoReadyYetModal'
+import useSectionNoReadyYetStore from '../../../../store/slices/useSectionNoReadyYetStore'
 
 export const TaskAppliedDetailExtraInfoModal = ({
     showTaskAppliedDetailExtraInfoModal,
     setShowTaskAppliedDetailExtraInfoModal,
     taskSelectedForExtraInfo
 }) => {
-    const [showTaskAppliedChatNoReadyModal, setShowTaskAppliedChatNoReadyModal] = useState(false)
+    const { show, setShow } = useSectionNoReadyYetStore()
 
-    const handleShowChatNoReadyModal = (taskApplicationDetail) => {
-        setShowTaskAppliedChatNoReadyModal(!showTaskAppliedChatNoReadyModal)
-    }
     return (
         <div>
             <Modal
@@ -60,7 +57,7 @@ export const TaskAppliedDetailExtraInfoModal = ({
                                         <span style={{ fontWeight: 'bold' }}>Telefono: </span>
                                         {applicationDetail.User?.phone}
                                     </p>
-                                    <Button onClick={() => handleShowChatNoReadyModal()} variant='outline-light'>Chatear con el aplicante</Button>
+                                    <Button onClick={setShow(!show)} variant='outline-light'>Chatear con el aplicante</Button>
                                 </div>
                             </ul>
                         ))}
@@ -72,10 +69,7 @@ export const TaskAppliedDetailExtraInfoModal = ({
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <TaskAppliedChatNoReadyModal
-                showTaskAppliedChatNoReadyModal={showTaskAppliedChatNoReadyModal}
-                setShowTaskAppliedChatNoReadyModal={setShowTaskAppliedChatNoReadyModal}
-            />
+            <SectionNoReadyYetModal />
         </div>
     )
 }
